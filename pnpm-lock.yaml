@@ -33,6 +33,12 @@ importers:
         specifier: ^7.2.0
         version: 7.5.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@babel/core':
+        specifier: ^7.14.5
+        version: 7.27.1
+      '@babel/preset-react':
+        specifier: ^7.14.5
+        version: 7.27.1(@babel/core@7.27.1)
       '@commitlint/cli':
         specifier: ^19.8.0
         version: 19.8.0(@types/node@20.17.32)(typescript@5.7.3)
@@ -233,6 +239,8 @@ importers:
         version: 19.0.0
 
   apps/www-service: {}
+
+  libs/shared/ui: {}
 
 packages:
 

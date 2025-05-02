@@ -4,7 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/www-service"
+      "path": "./apps/admin"
+    },
+    {
+      "path": "./libs/shared/ui"
     },
     {
       "path": "./apps/admin-service"
@@ -13,10 +16,10 @@
       "path": "./apps/api-service"
     },
     {
-      "path": "./apps/www"
+      "path": "./apps/www-service"
     },
     {
-      "path": "./apps/admin"
+      "path": "./apps/www"
     }
   ]
 }

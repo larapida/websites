@@ -67,19 +67,41 @@
     }
   },
   "generators": {
+    "@nx/node": {
+      "application": {
+        "useProjectJson": true,
+        "bundler": "esbuild",
+        "linter": "eslint",
+        "e2eTestRunner": "none",
+        "framework": "none",
+        "unitTestRunner": "none"
+      },
+      "library": {
+        "useProjectJson": true,
+        "buildable": false,
+        "publishable": false,
+        "linter": "eslint",
+        "unitTestRunner": "none"
+      }
+    },
     "@nx/react": {
       "application": {
         "babel": true,
         "style": "@emotion/styled",
         "linter": "eslint",
-        "bundler": "vite"
+        "bundler": "vite",
+        "useProjectJson": true
       },
       "component": {
         "style": "@emotion/styled"
       },
       "library": {
         "style": "@emotion/styled",
-        "linter": "eslint"
+        "linter": "eslint",
+        "bundler": "none",
+        "unitTestRunner": "none",
+        "useProjectJson": true,
+        "publishable": false
       }
     }
   }
