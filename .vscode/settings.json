@@ -1,0 +1,15 @@
+{
+  "eslint.validate": ["json"],
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/node_modules/*/**": true,
+    "**/.nx/**": true,
+    "**/dist/**": true,
+    "**/tmp/**": true,
+    "**/apps/server/src/prisma/**": true,
+    "**/apps/server/src/admin/**": true,
+    "**/apps/server/src/www/**": true
+  }
+}

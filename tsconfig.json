@@ -2,5 +2,21 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/www-service"
+    },
+    {
+      "path": "./apps/admin-service"
+    },
+    {
+      "path": "./apps/api-service"
+    },
+    {
+      "path": "./apps/www"
+    },
+    {
+      "path": "./apps/admin"
+    }
+  ]
 }

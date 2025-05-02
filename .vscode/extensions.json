@@ -1,3 +1,10 @@
 {
-  "recommendations": ["nrwl.angular-console", "esbenp.prettier-vscode"]
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "dotenv.dotenvx-vscode",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "eliostruyf.vscode-typescript-exportallmodules"
+  ]
 }
