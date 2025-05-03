@@ -3,26 +3,19 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/api-service/src",
   "projectType": "application",
-  "tags": [],
+  "tags": ["server", "service", "api"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
         "outputPath": "{workspaceRoot}/dist/apps/api-service",
-        "format": [
-          "cjs"
-        ],
+        "format": ["cjs"],
         "bundle": false,
         "main": "apps/api-service/src/main.ts",
         "tsConfig": "apps/api-service/tsconfig.app.json",
-        "assets": [
-          "apps/api-service/src/assets"
-        ],
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
@@ -45,9 +38,7 @@
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
-      "dependsOn": [
-        "build"
-      ],
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "@larapida/api-service:build",
         "runBuildTargetDependencies": false

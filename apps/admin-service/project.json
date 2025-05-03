@@ -3,26 +3,20 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/admin-service/src",
   "projectType": "application",
-  "tags": [],
+  "tags": ["server", "service", "admin"],
+  "implicitDependencies": ["@larapida/admin"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
         "outputPath": "{workspaceRoot}/dist/apps/admin-service",
-        "format": [
-          "cjs"
-        ],
+        "format": ["cjs"],
         "bundle": true,
         "main": "apps/admin-service/src/main.ts",
         "tsConfig": "apps/admin-service/tsconfig.app.json",
-        "assets": [
-          "apps/admin-service/src/assets"
-        ],
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
@@ -45,9 +39,7 @@
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
-      "dependsOn": [
-        "build"
-      ],
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "@larapida/admin-service:build",
         "runBuildTargetDependencies": false
