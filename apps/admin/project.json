@@ -1,9 +1,24 @@
 {
-  "name": "@larapida/admin",
+  "name": "@larapida-websites/admin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/admin/src",
   "projectType": "application",
-  "tags": ["client", "admin"],
+  "tags": ["client", "admin", "type:app"],
   "// targets": "to see all targets run: nx show project @larapida/admin --web",
-  "targets": {}
+  "targets": {
+    "build": {
+      "dependsOn": ["typecheck", "^build"]
+    },
+    "typegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/admin",
+        "commands": ["react-router typegen"]
+      },
+      "outputs": ["{projectRoot}/.react-router"]
+    },
+    "typecheck": {
+      "dependsOn": ["typegen", "^typecheck"]
+    }
+  }
 }

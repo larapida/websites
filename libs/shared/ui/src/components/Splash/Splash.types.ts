@@ -1,14 +1,9 @@
-import { type ReactNode } from 'react';
+import { type PropsWithChildren } from 'react';
 
 /**
  * Props for the `Splash` component, a fullscreen layout wrapper.
  */
-export interface SplashProps {
-  /**
-   * Content to render inside the splash screen layout.
-   */
-  children: ReactNode;
-
+export interface SplashProps extends PropsWithChildren {
   /**
    * The maximum width of the container (Joy UI `Container` maxWidth prop).
    * @default "sm"

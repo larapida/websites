@@ -1,4 +1,4 @@
-import { Sheet, type SheetProps } from '@mui/joy';
+import { Sheet, Theme, type SheetProps } from '@mui/joy';
 
 /**
  * `WhiteSheet` is a pre-styled wrapper around Joy UI's `Sheet` component
@@ -27,7 +27,9 @@ export function WhiteSheet(props: SheetProps) {
     <Sheet
       sx={{
         backgroundColor: 'background.body',
-        ...(typeof sx === 'function' ? (theme) => ({ ...sx(theme) }) : sx),
+        ...(typeof sx === 'function'
+          ? (theme: Theme) => ({ ...sx(theme) })
+          : sx),
       }}
       {...rest}
     >

@@ -21,12 +21,12 @@ import { type SplashProps } from './Splash.types';
  * @param props - Layout configuration including `withWallpaper`, `containerMaxWidth`, and `alignContentCenter`.
  * @returns A styled fullscreen layout container.
  */
-export function Splash(props: SplashProps) {
+export const Splash = (props: SplashProps) => {
   const {
-    children,
     containerMaxWidth = 'sm',
     withWallpaper = false,
     alignContentCenter = false,
+    children,
   } = props;
 
   const baseSx: SxProps = {
@@ -54,4 +54,4 @@ export function Splash(props: SplashProps) {
       </Container>
     </Box>
   );
-}
+};

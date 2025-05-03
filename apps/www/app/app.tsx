@@ -8,7 +8,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <NxWelcome title="@larapida/www" />
+      <NxWelcome title="@larapida-websites/www" />
     </StyledApp>
   );
 }

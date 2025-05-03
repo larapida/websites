@@ -1,10 +1,10 @@
 {
-  "name": "@larapida/admin-service",
+  "name": "@larapida-websites/admin-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/admin-service/src",
   "projectType": "application",
-  "tags": ["server", "service", "admin"],
-  "implicitDependencies": ["@larapida/admin"],
+  "tags": ["server", "service", "admin", "type:app"],
+  "implicitDependencies": ["@larapida-websites/admin"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -41,15 +41,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "@larapida/admin-service:build",
+        "buildTarget": "@larapida-websites/admin-service:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "@larapida/admin-service:build:development"
+          "buildTarget": "@larapida-websites/admin-service:build:development"
         },
         "production": {
-          "buildTarget": "@larapida/admin-service:build:production"
+          "buildTarget": "@larapida-websites/admin-service:build:production"
         }
       }
     }

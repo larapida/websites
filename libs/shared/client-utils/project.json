@@ -1,0 +1,9 @@
+{
+  "name": "shared-client-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/client-utils/src",
+  "projectType": "library",
+  "tags": ["client", "type:util"],
+  "// targets": "to see all targets run: nx show project shared-client-utils --web",
+  "targets": {}
+}

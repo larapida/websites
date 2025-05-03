@@ -1,9 +1,9 @@
 {
-  "name": "@larapida/api-service",
+  "name": "@larapida-websites/api-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/api-service/src",
   "projectType": "application",
-  "tags": ["server", "service", "api"],
+  "tags": ["server", "service", "api", "type:app"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -40,15 +40,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "@larapida/api-service:build",
+        "buildTarget": "@larapida-websites/api-service:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "@larapida/api-service:build:development"
+          "buildTarget": "@larapida-websites/api-service:build:development"
         },
         "production": {
-          "buildTarget": "@larapida/api-service:build:production"
+          "buildTarget": "@larapida-websites/api-service:build:production"
         }
       }
     }

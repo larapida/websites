@@ -12,7 +12,9 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "jsxImportSource": "@emotion/react",
-    "rootDir": "app",
+    "baseUrl": ".",
+    "rootDirs": [".", ".react-router/types"],
+    "verbatimModuleSyntax": true,
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"
   },
   "include": [
@@ -23,7 +25,8 @@
     "**/.server/**/*.ts",
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",
-    "**/.client/**/*.tsx"
+    "**/.client/**/*.tsx",
+    ".react-router/types/**/*"
   ],
   "exclude": [
     "out-tsc",
@@ -39,5 +42,13 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/shared/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/shared/client-utils/tsconfig.lib.json"
+    }
   ]
 }

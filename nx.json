@@ -65,6 +65,10 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "typegen": {
+      "cache": true,
+      "outputs": ["{projectRoot}/.react-router"]
     }
   },
   "generators": {

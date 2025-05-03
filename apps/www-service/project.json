@@ -1,10 +1,10 @@
 {
-  "name": "@larapida/www-service",
+  "name": "@larapida-websites/www-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/www-service/src",
   "projectType": "application",
-  "tags": ["server", "service", "www"],
-  "implicitDependencies": ["@larapida/www"],
+  "tags": ["server", "service", "www", "type:app"],
+  "implicitDependencies": ["@larapida-websites/www"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -41,15 +41,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "@larapida/www-service:build",
+        "buildTarget": "@larapida-websites/www-service:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "@larapida/www-service:build:development"
+          "buildTarget": "@larapida-websites/www-service:build:development"
         },
         "production": {
-          "buildTarget": "@larapida/www-service:build:production"
+          "buildTarget": "@larapida-websites/www-service:build:production"
         }
       }
     }
