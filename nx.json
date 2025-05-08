@@ -26,7 +26,19 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": [
+        "libs/shared/service-utils/*",
+        "libs/shared/service-configs/*",
+        "libs/shared/service-types/*",
+        "libs/api/database-utils/*",
+        "libs/api-service/database-utils/*",
+        "tools/prisma/*",
+        "libs/api-service/middlewares/*",
+        "libs/api-service/auth/*",
+        "libs/api-service/auth/services/*",
+        "libs/api-service/utils/*"
+      ]
     },
     {
       "plugin": "@nx/eslint/plugin",
@@ -57,6 +69,26 @@
         "typecheckTargetName": "typecheck",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": [
+        "libs/shared/service-utils/*",
+        "libs/shared/service-configs/*",
+        "libs/shared/service-types/*",
+        "libs/api/database-utils/*",
+        "libs/api-service/database-utils/*",
+        "tools/prisma/*",
+        "libs/api-service/middlewares/*",
+        "libs/api-service/auth/*",
+        "libs/api-service/auth/services/*",
+        "libs/api-service/utils/*"
+      ],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
       }
     }
   ],

@@ -1,3 +1,4 @@
+import { CssBaseline, CssVarsProvider } from '@mui/joy';
 import {
   Links,
   Meta,
@@ -8,11 +9,13 @@ import {
   type LinksFunction,
 } from 'react-router';
 
-import { AppNav } from './app-nav';
-
 export const meta: MetaFunction = () => [
   {
-    title: 'New Nx React Router App',
+    title: 'La Rapida Molinetto',
+  },
+  {
+    name: 'apple-mobile-web-app-title',
+    content: 'La Rapida',
   },
 ];
 
@@ -27,6 +30,27 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    href: '/favicon-96x96.png',
+    sizes: '96x96',
+  },
+  {
+    rel: 'icon',
+    type: 'image/svg+xml',
+    href: '/favicon.svg',
+  },
+  { rel: 'shortcut icon', href: '/favicon.ico' },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '180x180',
+    href: '/apple-touch-icon.png',
+  },
+  {
+    rel: 'manifest',
+    href: 'site.webmanifest',
+  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -39,7 +63,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <AppNav />
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -49,5 +72,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <CssVarsProvider>
+      <CssBaseline />
+      <Outlet />
+    </CssVarsProvider>
+  );
 }

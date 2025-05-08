@@ -1,0 +1,9 @@
+{
+  "name": "@larapida-websites/api-service-database-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-service/database-utils/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project @larapida-websites/api-service-database-utils --web",
+  "targets": {}
+}

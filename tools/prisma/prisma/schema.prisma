@@ -1,0 +1,40 @@
+generator client {
+  provider               = "prisma-client"
+  output                 = "../../../libs/api-service/database-utils/src/prisma"
+  runtime                = "nodejs"
+  moduleFormat           = "cjs"
+  generatedFileExtension = "ts"
+  importFileExtension    = ""
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+
+  firstname String
+  lastname  String
+
+  email    String @unique
+  password String
+
+  isActive Boolean @default(true)
+  isAdmin  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id String @id @default(cuid())
+
+  name        String  @unique
+  slug        String  @unique
+  description String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

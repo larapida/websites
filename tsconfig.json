@@ -23,6 +23,30 @@
     },
     {
       "path": "./libs/shared/client-utils"
+    },
+    {
+      "path": "./libs/shared/service-utils"
+    },
+    {
+      "path": "./libs/shared/service-configs"
+    },
+    {
+      "path": "./libs/shared/service-types"
+    },
+    {
+      "path": "./libs/api-service/database-utils"
+    },
+    {
+      "path": "./tools/prisma"
+    },
+    {
+      "path": "./libs/api-service/middlewares"
+    },
+    {
+      "path": "./libs/api-service/endpoints"
+    },
+    {
+      "path": "./libs/api-service/utils"
     }
   ]
 }

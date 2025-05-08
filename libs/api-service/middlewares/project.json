@@ -1,0 +1,9 @@
+{
+  "name": "@larapida-websites/api-service-middlewares",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-service/middlewares/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project @larapida-websites/middlewares --web",
+  "targets": {}
+}

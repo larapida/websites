@@ -1,0 +1,9 @@
+{
+  "name": "@larapida-websites/shared-service-types",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/service-types/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project @larapida-websites/shared-service-types --web",
+  "targets": {}
+}
