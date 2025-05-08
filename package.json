@@ -6,7 +6,7 @@
   "scripts": {
     "commit": "cz",
     "prepare": "husky",
-    "clean:node_modules": "pnpm dlx rimraf '**/node_modules'",
+    "clean:node_modules": "pnpm dlx rimraf --glob ./**/node_modules",
     "clean": "pnpm dlx nx reset && pnpm dlx rimraf tmp dist .nx && pnpm run clean:node_modules",
     "reset": "pnpm run clean && pnpm install && pnpm dlx nx reset"
   },
@@ -30,8 +30,8 @@
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router": "^7.5.3"
   },
   "devDependencies": {
@@ -49,6 +49,7 @@
     "@larapida-websites/shared-service-configs": "workspace:^",
     "@larapida-websites/shared-service-utils": "workspace:^",
     "@larapida-websites/shared-ui": "workspace:^",
+    "@larapida-websites/www-ui": "workspace:^",
     "@nx/esbuild": "20.8.1",
     "@nx/eslint": "20.8.1",
     "@nx/eslint-plugin": "20.8.1",
@@ -68,8 +69,8 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.17.32",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.4.1",
     "@vitest/ui": "^3.1.2",
     "commitizen": "^4.3.1",

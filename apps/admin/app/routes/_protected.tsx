@@ -1,7 +1,8 @@
 import { Outlet, redirect } from 'react-router';
 import { api } from '@larapida-websites/shared-client-utils';
+import type { Route } from './+types/_protected';
 
-export async function clientLoader() {
+export async function clientLoader(_: Route.ClientLoaderArgs) {
   // set login url with next search param if necessary
   const currentPath = window.location.pathname + window.location.search;
   const basePath = window.location.pathname;
@@ -17,7 +18,7 @@ export async function clientLoader() {
   };
 
   try {
-    const { data } = await api.v1.get('/auth/token/verify-decode', {
+    const { data } = await api.v1.get('/auth/me', {
       withCredentials: true,
     });
     const { id, isAdmin } = data;
@@ -32,11 +33,11 @@ export async function clientLoader() {
 
     return { user: { id, isAdmin } };
   } catch (error) {
-    console.error('Token verification failed:', error);
+    console.error('Token non valido o malformato:', error);
     return redirectAction();
   }
 }
 
-export default function AppLayout() {
+export default function ProtectedLayout(_: Route.ComponentProps) {
   return <Outlet />;
 }

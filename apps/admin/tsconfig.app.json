@@ -12,7 +12,6 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "jsxImportSource": "@emotion/react",
-    "baseUrl": ".",
     "rootDirs": [".", ".react-router/types"],
     "verbatimModuleSyntax": true,
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"

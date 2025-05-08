@@ -9,5 +9,15 @@
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],
-  "references": []
+  "references": [
+    {
+      "path": "../database-utils/tsconfig.lib.json"
+    },
+    {
+      "path": "../../shared/service-utils/tsconfig.lib.json"
+    },
+    {
+      "path": "../utils/tsconfig.lib.json"
+    }
+  ]
 }

@@ -7,5 +7,5 @@ import {
 
 export default [
   route('/accedi', './routes/accedi.tsx'),
-  layout('./layouts/app.tsx', [index('./routes/dashboard.tsx')]),
+  layout('./routes/_protected.tsx', [index('./routes/_protected._index.tsx')]),
 ] satisfies RouteConfig;

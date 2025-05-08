@@ -13,7 +13,11 @@ packages:
   - 'libs/api-service/utils'
   - 'libs/api-service/*'
   - 'libs/api-service/endpoints/*'
+  - 'libs/www/*'
 onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
   - '@swc/core'
   - 'esbuild'
   - 'nx'
+  - 'prisma'

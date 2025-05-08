@@ -9,8 +9,8 @@ import {
   isRouteErrorResponse,
 } from 'react-router';
 import { CssBaseline, CssVarsProvider } from '@mui/joy';
-import { Route } from './+types/root';
-import { LoadingScreen } from '@larapida/shared-ui-components';
+import type { Route } from './+types/root';
+import { LoadingScreen } from '@larapida-websites/shared-ui';
 
 export const meta: MetaFunction = () => [
   {

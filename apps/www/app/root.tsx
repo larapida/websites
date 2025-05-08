@@ -1,4 +1,6 @@
-import { CssBaseline, CssVarsProvider } from '@mui/joy';
+import { WhiteSheet } from '@larapida-websites/shared-ui';
+import { Box, Button, CssBaseline, CssVarsProvider, Stack } from '@mui/joy';
+import { IconMenu2 } from '@tabler/icons-react';
 import {
   Links,
   Meta,
@@ -75,7 +77,35 @@ export default function App() {
   return (
     <CssVarsProvider>
       <CssBaseline />
-      <Outlet />
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gridTemplateRows: '56px 1fr',
+          gridColumnGap: '0px',
+          gridRowGap: '0px',
+          height: '100vh',
+        }}
+      >
+        <WhiteSheet>
+          <Stack
+            direction="row"
+            spacing={2}
+            sx={{
+              m: 1,
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+            }}
+          >
+            <Button variant="plain">
+              <IconMenu2 />
+            </Button>
+          </Stack>
+        </WhiteSheet>
+        <Box sx={{ overflowY: 'auto' }}>
+          <Outlet />
+        </Box>
+      </Box>
     </CssVarsProvider>
   );
 }

@@ -1,7 +1,7 @@
-import { PropsWithChildren, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
-export interface AnchorSegmentProps extends PropsWithChildren {
+export interface AnchorSegmentProps {
   id: string;
 
   /**
@@ -9,13 +9,15 @@ export interface AnchorSegmentProps extends PropsWithChildren {
    * @default 0
    */
   offset?: number;
+
+  children?: React.ReactNode;
 }
 
-export function AnchorSegment(props: AnchorSegmentProps) {
+export const AnchorSegment = (props: AnchorSegmentProps) => {
   const { id, offset = 0, children } = props;
 
   const location = useLocation();
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const scrollToSegment = () => {
@@ -34,9 +36,13 @@ export function AnchorSegment(props: AnchorSegmentProps) {
     return () => clearTimeout(timeout);
   }, [location.hash, id, offset]);
 
+  if (!children) {
+    return null;
+  }
+
   return (
     <div id={id} ref={ref} style={{ scrollMarginTop: `${offset}px` }}>
       {children}
     </div>
   );
-}
+};

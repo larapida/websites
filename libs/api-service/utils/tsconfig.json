@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../middlewares"
+    },
+    {
       "path": "./tsconfig.lib.json"
     }
   ]

@@ -4,6 +4,15 @@
   "include": [],
   "references": [
     {
+      "path": "../database-utils"
+    },
+    {
+      "path": "../../shared/service-utils"
+    },
+    {
+      "path": "../utils"
+    },
+    {
       "path": "./tsconfig.lib.json"
     }
   ]

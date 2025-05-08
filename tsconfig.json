@@ -47,6 +47,9 @@
     },
     {
       "path": "./libs/api-service/utils"
+    },
+    {
+      "path": "./libs/www/ui"
     }
   ]
 }
