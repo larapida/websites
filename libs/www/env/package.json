@@ -1,5 +1,5 @@
 {
-  "name": "@larapida-websites/shared-service-types",
+  "name": "@larapida-websites/www-env",
   "version": "0.0.1",
   "private": true,
   "main": "./src/index.ts",

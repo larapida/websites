@@ -3,13 +3,12 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/www-service/src",
   "projectType": "application",
-  "tags": ["server", "service", "www", "type:app"],
+  "tags": ["type:app", "scope:www", "platform:server"],
   "implicitDependencies": ["@larapida-websites/www"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
         "platform": "node",
         "outputPath": "{workspaceRoot}/dist/apps/www-service",
@@ -24,6 +23,7 @@
           }
         }
       },
+      "defaultConfiguration": "development",
       "configurations": {
         "development": {},
         "production": {
@@ -50,6 +50,27 @@
         },
         "production": {
           "buildTarget": "@larapida-websites/www-service:build:production"
+        }
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": false
+      },
+      "defaultConfiguration": "development",
+      "configurations": {
+        "development": {
+          "commands": [
+            "dotenvx run -fk libs/www/env/.env.keys -f libs/www/env/.env -- pnpm exec nx run-many -t build --projects=tag:scope:www --exclude=tag:type:lib --configuration=development",
+            "nx run www-env:inject:development"
+          ]
+        },
+        "production": {
+          "commands": [
+            "dotenvx run -fk libs/www/env/.env.keys -f libs/www/env/.env.production -- pnpm exec nx run-many -t build --projects=tag:scope:www --exclude=tag:type:lib --configuration=production",
+            "nx run www-env:inject:production"
+          ]
         }
       }
     }

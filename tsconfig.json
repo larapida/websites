@@ -31,9 +31,6 @@
       "path": "./libs/shared/service-configs"
     },
     {
-      "path": "./libs/shared/service-types"
-    },
-    {
       "path": "./libs/api-service/database-utils"
     },
     {
@@ -50,6 +47,12 @@
     },
     {
       "path": "./libs/www/ui"
+    },
+    {
+      "path": "./tools/dotenv-manager"
+    },
+    {
+      "path": "./libs/www/env"
     }
   ]
 }

@@ -3,10 +3,14 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/www/src",
   "projectType": "application",
-  "tags": ["client", "www", "type:app"],
+  "tags": ["type:app", "scope:www", "platform:client"],
   "// targets": "to see all targets run: nx show project @larapida/www --web",
   "targets": {
     "build": {
+      "outputs": [
+        "{workspaceRoot}/dist/apps/www/client",
+        "{workspaceRoot}/dist/apps/www/server"
+      ],
       "dependsOn": ["typecheck", "^build"]
     },
     "typegen": {

@@ -39,7 +39,7 @@ export async function app(options?: AppOptions): Promise<void> {
   // Global service variables
   service.set('SERVICE_NAME', process.env.SERVICE_NAME ?? 'www');
   service.set('DOMAIN_NAME', process.env.DOMAIN_NAME ?? 'localhost');
-  service.set('PROTOCOL', process.env.HTTPS ? 'https' : 'http');
+  service.set('PROTOCOL', process.env.HTTPS === 'true' ? 'https' : 'http');
   service.set('PORT', process.env.PORT);
 
   service.disable('x-powered-by');

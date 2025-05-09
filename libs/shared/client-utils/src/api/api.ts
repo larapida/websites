@@ -5,6 +5,9 @@ import axios, {
 } from 'axios';
 import { attachAuthorizationHeader } from './authorization-header.interceptor';
 
+const PROTOCOL = import.meta.env.VITE_HTTPS === 'true' ? 'https' : 'http';
+const API_SERVICE = import.meta.env.VITE_API_SERVICE_NAME ?? 'api';
+
 /**
  * Configuration object for different API versions.
  */
@@ -32,7 +35,7 @@ const commonApiConfig: ApiCommonConfig = {
 const apiConfig: ApiConfig = {
   v1: {
     ...commonApiConfig,
-    baseURL: 'http://api.' + import.meta.env.VITE_DOMAIN_NAME + '/v1',
+    baseURL: `${PROTOCOL}://${API_SERVICE}.${import.meta.env.VITE_DOMAIN_NAME}`,
   },
 };
 

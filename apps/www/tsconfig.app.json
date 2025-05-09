@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "../../dist/apps/www",
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "types": ["@react-router/node", "vite/client", "node"],
     "esModuleInterop": true,
@@ -41,6 +41,9 @@
     "eslint.config.mjs"
   ],
   "references": [
+    {
+      "path": "../../libs/www/ui/tsconfig.lib.json"
+    },
     {
       "path": "../../libs/shared/ui/tsconfig.lib.json"
     }

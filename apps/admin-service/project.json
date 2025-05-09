@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/admin-service/src",
   "projectType": "application",
-  "tags": ["server", "service", "admin", "type:app"],
+  "tags": ["type:app", "scope:admin", "platform:server"],
   "implicitDependencies": ["@larapida-websites/admin"],
   "targets": {
     "build": {
