@@ -1,7 +1,7 @@
-# dotenv-manager
+# ecosystem
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Building
 
-Run `nx build dotenv-manager` to build the library.
+Run `nx build ecosystem` to build the library.

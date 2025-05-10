@@ -1,9 +1,0 @@
-{
-  "executors": {
-    "deploy": {
-      "implementation": "./dist/executors/deploy/executor",
-      "schema": "./dist/executors/deploy/schema.json",
-      "description": "deploy env file executor"
-    }
-  }
-}

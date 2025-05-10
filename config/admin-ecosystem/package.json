@@ -13,5 +13,16 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {},
+  "nx": {
+    "targets": {
+      "inject": {
+        "executor": "@larapida-websites/ecosystem:inject-env",
+        "options": {
+          "scope": "admin"
+        }
+      }
+    }
+  }
 }

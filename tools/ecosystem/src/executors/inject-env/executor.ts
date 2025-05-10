@@ -17,7 +17,7 @@ const runExecutor: PromiseExecutor<DeployExecutorSchema> = async (options) => {
     environment === 'development' ? '.env' : `.env.${environment}`;
 
   // Source
-  const vaultPath = resolve(`libs/${scope}/env`);
+  const vaultPath = resolve(`config/${scope}-ecosystem`);
   const envKeys = join(vaultPath, '.env.keys');
   const encryptedEnvFilePath = join(vaultPath, encryptedEnvFile);
 

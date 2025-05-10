@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "inject-env": {
+      "implementation": "./dist/executors/inject-env/executor",
+      "schema": "./dist/executors/inject-env/schema.json",
+      "description": "Inject env executor"
+    }
+  }
+}

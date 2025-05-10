@@ -114,9 +114,9 @@ importers:
       '@larapida-websites/api-service-utils':
         specifier: workspace:^
         version: link:libs/api-service/utils
-      '@larapida-websites/dotenv-manager':
+      '@larapida-websites/ecosystem':
         specifier: workspace:^
-        version: link:tools/dotenv-manager
+        version: link:tools/ecosystem
       '@larapida-websites/shared-client-utils':
         specifier: workspace:^
         version: link:libs/shared/client-utils
@@ -359,8 +359,6 @@ importers:
 
   config/www-ecosystem: {}
 
-  libs/admin/env: {}
-
   libs/api-service/database-utils: {}
 
   libs/api-service/endpoints: {}
@@ -377,11 +375,18 @@ importers:
 
   libs/shared/ui: {}
 
-  libs/www/env: {}
-
   libs/www/ui: {}
 
-  tools/dotenv-manager:
+  tools/ecosystem:
+    dependencies:
+      '@nx/devkit':
+        specifier: 20.8.1
+        version: 20.8.1(nx@20.8.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
+      '@swc/helpers':
+        specifier: ~0.5.11
+        version: 0.5.17
+
+  tools/old-dotenv-manager:
     dependencies:
       '@nx/devkit':
         specifier: 20.8.1

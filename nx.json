@@ -74,7 +74,7 @@
           "targetName": "typecheck"
         }
       },
-      "exclude": ["tools/dotenv-manager/*"]
+      "exclude": ["tools/dotenv-manager/*", "tools/*", "tools/ecosystem/*"]
     }
   ],
   "targetDefaults": {
