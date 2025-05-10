@@ -5,8 +5,6 @@ packages:
   - 'libs/api-service/*'
   - 'libs/www/*'
   - 'tools/*'
-  - 'libs/admin/*'
-  - 'libs/api/*'
   - 'config/*'
 onlyBuiltDependencies:
   - '@prisma/client'

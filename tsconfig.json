@@ -52,12 +52,6 @@
       "path": "./tools/dotenv-manager"
     },
     {
-      "path": "./libs/www/env"
-    },
-    {
-      "path": "./libs/admin/env"
-    },
-    {
       "path": "./config/api-ecosystem"
     },
     {
