@@ -27,7 +27,14 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": ["libs/www/env/*"]
+      "exclude": [
+        "libs/www/env/*",
+        "libs/admin/env/*",
+        "libs/api/env/*",
+        "config/api-ecosystem/*",
+        "config/admin-ecosystem/*",
+        "config/www-ecosystem/*"
+      ]
     },
     {
       "plugin": "@nx/eslint/plugin",
@@ -94,7 +101,6 @@
   "generators": {
     "@nx/node": {
       "application": {
-        "useProjectJson": true,
         "bundler": "esbuild",
         "linter": "eslint",
         "e2eTestRunner": "none",

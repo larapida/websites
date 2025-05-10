@@ -1,10 +1,9 @@
 {
-  "name": "@larapida-websites/admin-service",
+  "name": "old-api-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/admin-service/src",
+  "sourceRoot": "apps/old-api-service/src",
   "projectType": "application",
-  "tags": ["type:app", "scope:admin", "platform:server"],
-  "implicitDependencies": ["@larapida-websites/admin"],
+  "tags": ["type:app", "scope:api", "platform:server"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -12,11 +11,11 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "{workspaceRoot}/dist/apps/admin-service",
+        "outputPath": "{workspaceRoot}/dist/apps/old-api-service",
         "format": ["cjs"],
-        "bundle": true,
-        "main": "apps/admin-service/src/main.ts",
-        "tsConfig": "apps/admin-service/tsconfig.app.json",
+        "bundle": false,
+        "main": "apps/old-api-service/src/main.ts",
+        "tsConfig": "apps/old-api-service/tsconfig.app.json",
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
@@ -41,15 +40,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "@larapida-websites/admin-service:build",
+        "buildTarget": "old-api-service:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "@larapida-websites/admin-service:build:development"
+          "buildTarget": "old-api-service:build:development"
         },
         "production": {
-          "buildTarget": "@larapida-websites/admin-service:build:production"
+          "buildTarget": "old-api-service:build:production"
         }
       }
     }

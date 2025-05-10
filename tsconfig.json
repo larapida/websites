@@ -53,6 +53,18 @@
     },
     {
       "path": "./libs/www/env"
+    },
+    {
+      "path": "./libs/admin/env"
+    },
+    {
+      "path": "./config/api-ecosystem"
+    },
+    {
+      "path": "./config/admin-ecosystem"
+    },
+    {
+      "path": "./config/www-ecosystem"
     }
   ]
 }

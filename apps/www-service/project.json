@@ -4,18 +4,18 @@
   "sourceRoot": "apps/www-service/src",
   "projectType": "application",
   "tags": ["type:app", "scope:www", "platform:server"],
-  "implicitDependencies": ["@larapida-websites/www"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "bundle": true,
         "platform": "node",
         "outputPath": "{workspaceRoot}/dist/apps/www-service",
         "format": ["cjs"],
-        "bundle": false,
         "main": "apps/www-service/src/main.ts",
         "tsConfig": "apps/www-service/tsconfig.app.json",
+        "deleteOutputPath": true,
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {

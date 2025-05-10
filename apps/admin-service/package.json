@@ -1,5 +1,64 @@
 {
   "name": "@larapida-websites/admin-service",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "nx": {
+    "name": "admin-service",
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "bundle": true,
+          "deleteOutputPath": true,
+          "platform": "node",
+          "outputPath": "dist/apps/admin-service",
+          "format": [
+            "cjs"
+          ],
+          "main": "apps/admin-service/src/main.ts",
+          "tsConfig": "apps/admin-service/tsconfig.app.json",
+          "esbuildOptions": {
+            "sourcemap": true,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        },
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {},
+          "production": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "admin-service:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "admin-service:build:development"
+          },
+          "production": {
+            "buildTarget": "admin-service:build:production"
+          }
+        }
+      }
+    }
+  }
 }

@@ -7,9 +7,6 @@
     "**/node_modules/*/**": true,
     "**/.nx/**": true,
     "**/dist/**": true,
-    "**/tmp/**": true,
-    "**/apps/server/src/prisma/**": true,
-    "**/apps/server/src/admin/**": true,
-    "**/apps/server/src/www/**": true
+    "**/tmp/**": true
   }
 }

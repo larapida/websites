@@ -4,15 +4,6 @@
   "include": [],
   "references": [
     {
-      "path": "../../libs/api-service/middlewares"
-    },
-    {
-      "path": "../../libs/api-service/endpoints"
-    },
-    {
-      "path": "../../libs/shared/service-utils"
-    },
-    {
       "path": "./tsconfig.app.json"
     }
   ]

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express, { Application } from 'express';
 import { join } from 'path';
 import { reactRouterServerLoader } from '@larapida-websites/shared-service-utils';

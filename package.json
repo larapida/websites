@@ -7,10 +7,12 @@
     "commit": "cz",
     "prepare": "husky",
     "clean:node_modules": "pnpm dlx rimraf --glob ./**/node_modules",
-    "clean": "pnpm dlx nx reset && pnpm dlx rimraf tmp dist .nx && pnpm run clean:node_modules",
-    "reset": "pnpm run clean && pnpm install && pnpm dlx nx reset"
+    "clean:dist": "pnpm dlx rimraf --glob ./**/dist",
+    "clean": "pnpm exec nx reset && pnpm dlx rimraf tmp .nx && pnpm run clean:dist && pnpm run clean:node_modules",
+    "reset": "pnpm run clean && pnpm install && pnpm exec nx reset"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.43.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/joy": "5.0.0-beta.52",
@@ -26,6 +28,7 @@
     "bcryptjs": "^3.0.2",
     "compression": "^1.8.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "isbot": "^4.4.0",
     "js-cookie": "^3.0.5",
