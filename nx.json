@@ -74,7 +74,13 @@
           "targetName": "typecheck"
         }
       },
-      "exclude": ["tools/dotenv-manager/*", "tools/*", "tools/ecosystem/*"]
+      "exclude": [
+        "tools/dotenv-manager/*",
+        "tools/*",
+        "tools/ecosystem/*",
+        "tools/cli/*",
+        "tools/prisma/*"
+      ]
     }
   ],
   "targetDefaults": {

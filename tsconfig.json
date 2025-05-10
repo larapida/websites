@@ -34,9 +34,6 @@
       "path": "./libs/api-service/database-utils"
     },
     {
-      "path": "./tools/prisma"
-    },
-    {
       "path": "./libs/api-service/middlewares"
     },
     {
@@ -59,6 +56,12 @@
     },
     {
       "path": "./tools/ecosystem"
+    },
+    {
+      "path": "./tools/cli"
+    },
+    {
+      "path": "./tools/prisma"
     }
   ]
 }
