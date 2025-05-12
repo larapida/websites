@@ -123,6 +123,9 @@ importers:
       '@larapida-websites/ecosystem':
         specifier: workspace:^
         version: link:tools/ecosystem
+      '@larapida-websites/prisma':
+        specifier: workspace:^
+        version: link:tools/prisma
       '@larapida-websites/shared-client-utils':
         specifier: workspace:^
         version: link:libs/shared/client-utils
@@ -321,8 +324,6 @@ importers:
 
   apps/api-service: {}
 
-  apps/old-api-service: {}
-
   apps/www:
     dependencies:
       '@react-router/node':
@@ -365,7 +366,11 @@ importers:
 
   config/www-ecosystem: {}
 
-  libs/api-service/database-utils: {}
+  libs/api-service/database-utils:
+    dependencies:
+      '@swc/helpers':
+        specifier: ~0.5.17
+        version: 0.5.17
 
   libs/api-service/endpoints: {}
 
@@ -388,6 +393,15 @@ importers:
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.17
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.2
+      commander:
+        specifier: ^13.1.0
+        version: 13.1.0
+      inquirer:
+        specifier: ^12.6.1
+        version: 12.6.1(@types/node@20.17.32)
 
   tools/ecosystem:
     dependencies:
@@ -398,13 +412,14 @@ importers:
         specifier: ~0.5.11
         version: 0.5.17
 
-  tools/old-prisma: {}
-
   tools/prisma:
     dependencies:
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.17
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.2
 
 packages:
 

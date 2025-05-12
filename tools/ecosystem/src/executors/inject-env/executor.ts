@@ -9,7 +9,8 @@ const runExecutor: PromiseExecutor<DeployExecutorSchema> = async (options) => {
     scope,
     environment = 'development',
     type = 'app',
-    projectName = `${scope}-service`,
+    preBuild = false,
+    projectName = preBuild ? scope : `${scope}-service`,
   } = options;
 
   // define the .env file to decrypt inside local vault
@@ -22,7 +23,8 @@ const runExecutor: PromiseExecutor<DeployExecutorSchema> = async (options) => {
   const encryptedEnvFilePath = join(vaultPath, encryptedEnvFile);
 
   // Destination
-  const distPath = resolve(`dist/${type}s/${projectName}`);
+  const outputRoot = preBuild ? '' : 'dist/';
+  const distPath = resolve(`${outputRoot}${type}s/${projectName}`);
   const outputPath = join(distPath, '.env');
 
   try {

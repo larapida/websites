@@ -17,10 +17,28 @@
   "devDependencies": {},
   "nx": {
     "targets": {
-      "inject": {
+      "inject-env": {
         "executor": "@larapida-websites/ecosystem:inject-env",
+        "parallelism": false,
         "options": {
           "scope": "admin"
+        }
+      },
+      "pre-inject-env": {
+        "executor": "@larapida-websites/ecosystem:inject-env",
+        "parallelism": false,
+        "options": {
+          "scope": "admin",
+          "preBuild": true
+        },
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {
+            "environment": "development"
+          },
+          "production": {
+            "environment": "production"
+          }
         }
       }
     }

@@ -21,6 +21,10 @@
     "projectName": {
       "type": "string",
       "description": "The project name where to deploy the .env file"
+    },
+    "preBuild": {
+      "type": "boolean",
+      "description": "Whether this executor is run as a build dependency or post the build target"
     }
   },
   "required": ["scope"]

@@ -32,9 +32,9 @@ export async function handler(req: Request, res: Response, next: NextFunction) {
       next(new HttpError(401, 'Credenziali non valide'));
     }
 
-    // Check if SECRETKEY is set
-    if (!process.env.SECRETKEY) {
-      console.error('IMPOSTARE SECRETKEY');
+    // Check if SECRET_KEY is set
+    if (!process.env.SECRET_KEY) {
+      console.error('IMPOSTARE SECRET_KEY');
       next(new HttpError(500, 'Errore interno del server'));
     }
 
@@ -45,7 +45,7 @@ export async function handler(req: Request, res: Response, next: NextFunction) {
     };
 
     // Sign JWT token with 7-day expiration
-    const token = jwt.sign(payload, process.env.SECRETKEY as string, {
+    const token = jwt.sign(payload, process.env.SECRET_KEY as string, {
       expiresIn: '7d',
     });
 

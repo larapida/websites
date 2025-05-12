@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "admin-service",
+    "projectType": "application",
+    "tags": [
+      "scope:admin",
+      "type:app",
+      "platform:server"
+    ],
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",
@@ -20,6 +25,7 @@
           ],
           "main": "apps/admin-service/src/main.ts",
           "tsConfig": "apps/admin-service/tsconfig.app.json",
+          "declaration": false,
           "esbuildOptions": {
             "sourcemap": true,
             "outExtension": {
@@ -42,20 +48,38 @@
       },
       "serve": {
         "executor": "@nx/js:node",
-        "defaultConfiguration": "development",
         "dependsOn": [
           "build"
         ],
         "options": {
           "buildTarget": "admin-service:build",
-          "runBuildTargetDependencies": false
+          "runBuildTargetDependencies": true,
+          "waitUntilTargets": [
+            "@larapida-websites/admin-ecosystem:pre-inject-env",
+            "@larapida-websites/admin:build",
+            "@larapida-websites/admin-ecosystem:inject-env"
+          ],
+          "buildTargetOptions": {
+            "deleteOutputPath": false
+          }
         },
+        "defaultConfiguration": "development",
         "configurations": {
           "development": {
-            "buildTarget": "admin-service:build:development"
+            "buildTarget": "admin-service:build:development",
+            "waitUntilTargets": [
+              "@larapida-websites/admin-ecosystem:pre-inject-env:development",
+              "@larapida-websites/admin:build:development",
+              "@larapida-websites/admin-ecosystem:inject-env:development"
+            ]
           },
           "production": {
-            "buildTarget": "admin-service:build:production"
+            "buildTarget": "admin-service:build:production",
+            "waitUntilTargets": [
+              "@larapida-websites/admin-ecosystem:pre-inject-env:production",
+              "@larapida-websites/admin:build:production",
+              "@larapida-websites/admin-ecosystem:inject-env:production"
+            ]
           }
         }
       }

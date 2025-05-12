@@ -1,6 +1,5 @@
 import { Command } from 'commander';
 import inquirer from 'inquirer';
-import { PrismaClient } from '../prisma/index.js';
 import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();

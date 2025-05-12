@@ -13,11 +13,18 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./seed": {
+      "development": "./src/seed/index.ts",
+      "types": "./dist/seed/index.d.ts",
+      "import": "./dist/seed/index.js",
+      "default": "./dist/seed/index.js"
     }
   },
   "dependencies": {
     "@swc/helpers": "~0.5.11",
-    "bcryptjs": "^3.0.2"
+    "bcryptjs": "^3.0.2",
+    "@larapida-websites/api-service-database-utils": "workspace:^"
   },
   "devDependencies": {},
   "nx": {
@@ -33,7 +40,11 @@
           "main": "tools/prisma/src/index.ts",
           "tsConfig": "tools/prisma/tsconfig.lib.json",
           "skipTypeCheck": true,
-          "stripLeadingPaths": true
+          "stripLeadingPaths": true,
+          "assets": [
+            "tools/prisma/prisma/**/*"
+          ],
+          "clean": true
         }
       },
       "generate": {
@@ -41,33 +52,34 @@
         "options": {
           "cwd": "tools/prisma"
         },
-        "defaultConfiguration": "client",
+        "defaultConfiguration": "development",
         "configurations": {
-          "client": {
-            "command": "dotenvx run -- pnpm prisma generate --generator client"
+          "development": {
+            "commands": [
+              "dotenvx run -f .env -- pnpm prisma generate"
+            ]
           },
-          "cli": {
-            "command": "dotenvx run -- pnpm prisma generate --generator clientForCli"
+          "production": {
+            "commands": [
+              "dotenvx run -f .env -- pnpm prisma generate"
+            ]
           }
         }
       },
       "migrate": {
         "executor": "nx:run-commands",
         "options": {
-          "cwd": "tools/old-prisma"
+          "cwd": "tools/prisma"
         },
         "defaultConfiguration": "development",
         "configurations": {
           "development": {
-            "command": "dotenvx run -f .env -- pnpm exec prisma migrate dev --generator client"
+            "command": "dotenvx run -f .env -- pnpm exec prisma migrate dev"
           },
           "production": {
-            "command": "dotenvx run -f .env -- pnpm exec prisma migrate deploy --generator client"
+            "command": "dotenvx run -f .env -- pnpm exec prisma migrate deploy"
           }
-        },
-        "dependsOn": [
-          "generate:client"
-        ]
+        }
       }
     }
   }

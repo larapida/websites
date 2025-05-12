@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
  * Route handler that verifies and decodes a JWT token from the Authorization header.
  *
  * - Requires `Authorization: Bearer <token>` header format.
- * - Requires `process.env.SECRETKEY` to be defined.
+ * - Requires `process.env.SECRET_KEY` to be defined.
  * - On success, responds with the decoded token payload.
  *
  * @param req - Express request object
@@ -22,16 +22,16 @@ export function handler(req: Request, res: Response, next: NextFunction) {
 
   const token = authHeader?.split(' ')[1];
 
-  // Check if SECRETKEY is set
-  if (!process.env.SECRETKEY) {
-    console.error('IMPOSTARE SECRETKEY');
+  // Check if SECRET_KEYY is set
+  if (!process.env.SECRET_KEY) {
+    console.error('IMPOSTARE SECRET_KEY');
     next(new HttpError(500, 'Errore interno del server'));
   }
 
   try {
     const payload = jwt.verify(
       token as string,
-      process.env.SECRETKEY as string
+      process.env.SECRET_KEY as string
     );
 
     res.json(payload);

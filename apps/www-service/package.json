@@ -1,5 +1,88 @@
 {
   "name": "@larapida-websites/www-service",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "tags": [
+      "scope:www",
+      "type:app",
+      "platform:server"
+    ],
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "bundle": true,
+          "deleteOutputPath": true,
+          "platform": "node",
+          "outputPath": "apps/www-service/dist",
+          "format": [
+            "cjs"
+          ],
+          "main": "apps/www-service/src/main.ts",
+          "tsConfig": "apps/www-service/tsconfig.app.json",
+          "declaration": false,
+          "esbuildOptions": {
+            "sourcemap": true,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        },
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {},
+          "production": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nx/js:node",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "www-service:build",
+          "runBuildTargetDependencies": true,
+          "waitUntilTargets": [
+            "@larapida-websites/www-ecosystem:pre-inject-env",
+            "@larapida-websites/www:build",
+            "@larapida-websites/www-ecosystem:inject-env"
+          ],
+          "buildTargetOptions": {
+            "deleteOutputPath": false
+          }
+        },
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {
+            "buildTarget": "www-service:build:development",
+            "waitUntilTargets": [
+              "@larapida-websites/www-ecosystem:pre-inject-env:development",
+              "@larapida-websites/www:build:development",
+              "@larapida-websites/www-ecosystem:inject-env:development"
+            ]
+          },
+          "production": {
+            "buildTarget": "www-service:build:production",
+            "waitUntilTargets": [
+              "@larapida-websites/www-ecosystem:pre-inject-env:production",
+              "@larapida-websites/www:build:production",
+              "@larapida-websites/www-ecosystem:inject-env:production"
+            ]
+          }
+        }
+      }
+    }
+  }
 }

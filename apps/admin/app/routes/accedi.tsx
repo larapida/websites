@@ -15,9 +15,20 @@ import {
 } from '@mui/joy';
 import { IconEyeClosed, IconEye } from '@tabler/icons-react';
 import { useState } from 'react';
-import { redirect, useFetcher, useNavigation } from 'react-router';
+import {
+  redirect,
+  useFetcher,
+  useNavigation,
+  type MetaFunction,
+} from 'react-router';
 import { api, token } from '@larapida-websites/shared-client-utils';
 import type { Route } from './+types/accedi';
+
+export const meta: MetaFunction = () => [
+  {
+    title: 'Accedi | La Rapida Molinetto Admin',
+  },
+];
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const url = new URL(request.url);

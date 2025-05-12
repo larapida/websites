@@ -3,26 +3,32 @@
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "api-service",
+    "projectType": "application",
+    "tags": [
+      "scope:api",
+      "type:app",
+      "platform:server"
+    ],
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",
         "outputs": [
           "{options.outputPath}"
         ],
-        "defaultConfiguration": "production",
+        "dependsOn": [
+          "^build"
+        ],
         "options": {
+          "bundle": true,
+          "deleteOutputPath": true,
           "platform": "node",
-          "outputPath": "apps/api-service/dist",
+          "outputPath": "dist/apps/api-service",
           "format": [
             "cjs"
           ],
-          "bundle": false,
           "main": "apps/api-service/src/main.ts",
           "tsConfig": "apps/api-service/tsconfig.app.json",
-          "assets": [
-            "apps/api-service/src/assets"
-          ],
+          "declaration": false,
           "esbuildOptions": {
             "sourcemap": true,
             "outExtension": {
@@ -30,6 +36,7 @@
             }
           }
         },
+        "defaultConfiguration": "development",
         "configurations": {
           "development": {},
           "production": {
@@ -49,15 +56,27 @@
           "build"
         ],
         "options": {
-          "buildTarget": "api-service:build",
-          "runBuildTargetDependencies": false
+          "buildTarget": "@larapida-websites/api-service:build",
+          "runBuildTargetDependencies": true,
+          "waitUntilTargets": [
+            "@larapida-websites/api-ecosystem:inject-env"
+          ],
+          "buildTargetOptions": {
+            "deleteOutputPath": false
+          }
         },
         "configurations": {
           "development": {
-            "buildTarget": "api-service:build:development"
+            "buildTarget": "@larapida-websites/api-service:build:development",
+            "waitUntilTargets": [
+              "@larapida-websites/api-ecosystem:inject-env:development"
+            ]
           },
           "production": {
-            "buildTarget": "api-service:build:production"
+            "buildTarget": "@larapida-websites/api-service:build:production",
+            "waitUntilTargets": [
+              "@larapida-websites/api-ecosystem:inject-env:development"
+            ]
           }
         }
       }

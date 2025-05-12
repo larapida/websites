@@ -21,4 +21,10 @@ export interface DeployExecutorSchema {
    * @default `${scope}-service`
    */
   projectName?: string;
+
+  /**
+   * Whether this executor is run as a build dependency or post the build target
+   * @default false
+   */
+  preBuild: boolean;
 }

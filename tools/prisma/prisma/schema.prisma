@@ -7,15 +7,6 @@ generator client {
   importFileExtension    = ""
 }
 
-generator clientForCli {
-  provider               = "prisma-client"
-  output                 = "../../../tools/cli/src/prisma"
-  runtime                = "nodejs"
-  moduleFormat           = "cjs"
-  generatedFileExtension = "ts"
-  importFileExtension    = ""
-}
-
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")

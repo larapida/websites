@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/www",
+    "outDir": "dist",
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "types": ["@react-router/node", "vite/client", "node"],
     "esModuleInterop": true,
@@ -9,10 +9,11 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "jsxImportSource": "@emotion/react",
-    "rootDir": "app",
+    "rootDirs": [".", ".react-router/types"],
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"
   },
   "include": [
@@ -23,7 +24,8 @@
     "**/.server/**/*.ts",
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",
-    "**/.client/**/*.tsx"
+    "**/.client/**/*.tsx",
+    ".react-router/types/**/*"
   ],
   "exclude": [
     "out-tsc",

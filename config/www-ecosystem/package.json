@@ -13,5 +13,34 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {},
+  "nx": {
+    "targets": {
+      "inject-env": {
+        "executor": "@larapida-websites/ecosystem:inject-env",
+        "parallelism": false,
+        "options": {
+          "scope": "www"
+        }
+      },
+      "pre-inject-env": {
+        "executor": "@larapida-websites/ecosystem:inject-env",
+        "parallelism": false,
+        "options": {
+          "scope": "www",
+          "preBuild": true
+        },
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {
+            "environment": "development"
+          },
+          "production": {
+            "environment": "production"
+          }
+        }
+      }
+    }
+  }
 }

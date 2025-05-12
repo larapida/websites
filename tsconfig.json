@@ -13,9 +13,6 @@
       "path": "./apps/admin-service"
     },
     {
-      "path": "./apps/api-service"
-    },
-    {
       "path": "./apps/www-service"
     },
     {
@@ -29,9 +26,6 @@
     },
     {
       "path": "./libs/shared/service-configs"
-    },
-    {
-      "path": "./libs/api-service/database-utils"
     },
     {
       "path": "./libs/api-service/middlewares"
@@ -62,6 +56,12 @@
     },
     {
       "path": "./tools/prisma"
+    },
+    {
+      "path": "./libs/api-service/database-utils"
+    },
+    {
+      "path": "./apps/api-service"
     }
   ]
 }

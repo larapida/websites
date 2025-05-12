@@ -20,5 +20,74 @@
     "@types/node": "^20.0.0",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0"
+  },
+  "nx": {
+    "projectType": "application",
+    "tags": [
+      "type:app",
+      "scope:admin",
+      "platform:client"
+    ],
+    "targets": {
+      "typegen": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/admin",
+          "commands": [
+            "react-router typegen"
+          ]
+        },
+        "outputs": [
+          "{projectRoot}/.react-router"
+        ]
+      },
+      "typecheck": {
+        "dependsOn": [
+          "typegen",
+          "^typecheck"
+        ]
+      },
+      "build": {
+        "dependsOn": [
+          {
+            "projects": [
+              "@larapida-websites/admin-ecosystem"
+            ],
+            "target": "pre-inject-env",
+            "params": "forward"
+          },
+          "typecheck",
+          "^build"
+        ],
+        "configurations": {
+          "development": {
+            "dependsOn": [
+              {
+                "projects": [
+                  "@larapida-websites/admin-ecosystem"
+                ],
+                "target": "pre-inject-env:development",
+                "params": "forward"
+              },
+              "typecheck",
+              "^build"
+            ]
+          },
+          "production": {
+            "dependsOn": [
+              {
+                "projects": [
+                  "@larapida-websites/admin-ecosystem"
+                ],
+                "target": "pre-inject-env:production",
+                "params": "forward"
+              },
+              "typecheck",
+              "^build"
+            ]
+          }
+        }
+      }
+    }
   }
 }

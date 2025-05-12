@@ -52,6 +52,7 @@
     "@larapida-websites/api-service-middlewares": "workspace:^",
     "@larapida-websites/api-service-utils": "workspace:^",
     "@larapida-websites/ecosystem": "workspace:^",
+    "@larapida-websites/prisma": "workspace:^",
     "@larapida-websites/shared-client-utils": "workspace:^",
     "@larapida-websites/shared-service-configs": "workspace:^",
     "@larapida-websites/shared-service-utils": "workspace:^",

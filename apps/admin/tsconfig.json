@@ -3,10 +3,10 @@
   "include": [],
   "references": [
     {
-      "path": "../../libs/shared/ui"
+      "path": "../../libs/shared/client-utils"
     },
     {
-      "path": "../../libs/shared/client-utils"
+      "path": "../../libs/shared/ui"
     },
     {
       "path": "./tsconfig.app.json"
@@ -15,7 +15,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
     "moduleResolution": "bundler",
     "types": ["@react-router/node"]
   }

@@ -8,12 +8,12 @@
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "jsxImportSource": "@emotion/react",
     "rootDirs": [".", ".react-router/types"],
-    "verbatimModuleSyntax": true,
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"
   },
   "include": [
@@ -44,10 +44,10 @@
   ],
   "references": [
     {
-      "path": "../../libs/shared/ui/tsconfig.lib.json"
+      "path": "../../libs/shared/client-utils/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/shared/client-utils/tsconfig.lib.json"
+      "path": "../../libs/shared/ui/tsconfig.lib.json"
     }
   ]
 }

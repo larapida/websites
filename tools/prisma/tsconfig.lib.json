@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDirs": ["seed"],
+    "rootDir": "src",
     "outDir": "dist",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
     "emitDeclarationOnly": true,
@@ -12,6 +12,10 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["seed/**/*.ts"],
-  "references": []
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "../../libs/api-service/database-utils/tsconfig.lib.json"
+    }
+  ]
 }

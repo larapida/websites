@@ -28,9 +28,6 @@
         }
       },
       "exclude": [
-        "libs/www/env/*",
-        "libs/admin/env/*",
-        "libs/api/env/*",
         "config/api-ecosystem/*",
         "config/admin-ecosystem/*",
         "config/www-ecosystem/*"
@@ -74,13 +71,7 @@
           "targetName": "typecheck"
         }
       },
-      "exclude": [
-        "tools/dotenv-manager/*",
-        "tools/*",
-        "tools/ecosystem/*",
-        "tools/cli/*",
-        "tools/prisma/*"
-      ]
+      "exclude": ["tools/*", "libs/api-service/database-utils/*"]
     }
   ],
   "targetDefaults": {
@@ -114,7 +105,6 @@
         "unitTestRunner": "none"
       },
       "library": {
-        "useProjectJson": true,
         "buildable": false,
         "publishable": false,
         "linter": "eslint",
@@ -126,8 +116,7 @@
         "babel": true,
         "style": "@emotion/styled",
         "linter": "eslint",
-        "bundler": "vite",
-        "useProjectJson": true
+        "bundler": "vite"
       },
       "component": {
         "style": "@emotion/styled"
@@ -137,7 +126,6 @@
         "linter": "eslint",
         "bundler": "none",
         "unitTestRunner": "none",
-        "useProjectJson": true,
         "publishable": false
       }
     }

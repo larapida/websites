@@ -1,6 +1,6 @@
 import type { Config } from '@react-router/dev/config';
 
 export default {
-  buildDirectory: '../../dist/apps/admin',
   ssr: false,
+  buildDirectory: '../../dist/apps/admin',
 } satisfies Config;

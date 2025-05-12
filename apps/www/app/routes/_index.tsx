@@ -1,4 +1,4 @@
-import { MetaFunction } from 'react-router';
+import type { MetaFunction } from 'react-router';
 import { Page } from '@larapida-websites/www-ui';
 import { AnchorSegment, CardMedia } from '@larapida-websites/shared-ui';
 import { Typography } from '@mui/joy';
