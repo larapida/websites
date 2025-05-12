@@ -1,3 +1,3 @@
-# shared-service-configs
+# shared-service-config
 
 This library was generated with [Nx](https://nx.dev).

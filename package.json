@@ -53,7 +53,7 @@
     "@larapida-websites/api-service-utils": "workspace:^",
     "@larapida-websites/ecosystem": "workspace:^",
     "@larapida-websites/shared-client-utils": "workspace:^",
-    "@larapida-websites/shared-service-configs": "workspace:^",
+    "@larapida-websites/shared-service-config": "workspace:^",
     "@larapida-websites/shared-service-utils": "workspace:^",
     "@larapida-websites/shared-ui": "workspace:^",
     "@larapida-websites/www-ui": "workspace:^",

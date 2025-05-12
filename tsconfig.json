@@ -7,9 +7,6 @@
       "path": "./apps/admin"
     },
     {
-      "path": "./libs/shared/ui"
-    },
-    {
       "path": "./apps/admin-service"
     },
     {
@@ -17,12 +14,6 @@
     },
     {
       "path": "./apps/www"
-    },
-    {
-      "path": "./libs/shared/service-utils"
-    },
-    {
-      "path": "./libs/shared/service-configs"
     },
     {
       "path": "./libs/api-service/endpoints"
@@ -65,6 +56,18 @@
     },
     {
       "path": "./libs/shared/client-types"
+    },
+    {
+      "path": "./libs/shared/service-config"
+    },
+    {
+      "path": "./libs/shared/service-config"
+    },
+    {
+      "path": "./libs/shared/service-utils"
+    },
+    {
+      "path": "./libs/shared/ui"
     }
   ]
 }

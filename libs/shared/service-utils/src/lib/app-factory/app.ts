@@ -3,7 +3,7 @@ import compression from 'compression';
 import morgan from 'morgan';
 import { startService } from './startService';
 import cors from 'cors';
-import { createCorsOptions } from '@larapida-websites/shared-service-configs';
+import { createCorsOptions } from '@larapida-websites/shared-service-config';
 
 export interface AppOptions {
   /**

@@ -31,7 +31,7 @@ export function createCorsOptions(app: Application): CorsOptions {
       ) {
         callback(null, true);
       } else {
-        callback(new Error('Non permesso dale regole CORS'));
+        callback(new Error('Non permesso dalle regole CORS'));
       }
     },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

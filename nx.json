@@ -36,7 +36,9 @@
         "libs/api-service/types/*",
         "libs/api-service/middlewares/*",
         "libs/api-service/utils/*",
-        "libs/shared/client-types/*"
+        "libs/shared/client-types/*",
+        "libs/shared/service-config/*",
+        "libs/shared/service-utils/*"
       ]
     },
     {
