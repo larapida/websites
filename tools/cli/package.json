@@ -14,6 +14,13 @@
       "default": "./dist/index.js"
     }
   },
+  "dependencies": {
+    "@swc/helpers": "~0.5.11",
+    "commander": "^13.1.0",
+    "inquirer": "^12.6.1",
+    "bcryptjs": "^3.0.2"
+  },
+  "devDependencies": {},
   "nx": {
     "sourceRoot": "tools/cli/src",
     "targets": {
@@ -28,14 +35,50 @@
           "tsConfig": "tools/cli/tsconfig.lib.json",
           "skipTypeCheck": true,
           "stripLeadingPaths": true
+        },
+        "dependsOn": [
+          {
+            "projects": [
+              "@larapida-websites/prisma-tools"
+            ],
+            "target": "generate",
+            "params": "forward"
+          },
+          "^build"
+        ],
+        "parallel": false,
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {
+            "dependsOn": [
+              {
+                "projects": [
+                  "@larapida-websites/prisma-tools"
+                ],
+                "target": "generate:development",
+                "params": "forward"
+              },
+              "^build"
+            ],
+            "parallel": false
+          },
+          "production": {
+            "development": {
+              "dependsOn": [
+                {
+                  "projects": [
+                    "@larapida-websites/prisma-tools"
+                  ],
+                  "target": "generate:production",
+                  "params": "forward"
+                },
+                "^build"
+              ],
+              "parallel": false
+            }
+          }
         }
       }
     }
-  },
-  "dependencies": {
-    "@swc/helpers": "~0.5.11",
-    "commander": "^13.1.0",
-    "inquirer": "^12.6.1",
-    "bcryptjs": "^3.0.2"
   }
 }

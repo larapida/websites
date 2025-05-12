@@ -4,9 +4,6 @@
   "include": [],
   "references": [
     {
-      "path": "../database-utils"
-    },
-    {
       "path": "../../shared/service-utils"
     },
     {

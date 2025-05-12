@@ -1,2 +1,6 @@
+# Generated Prisma Client
+src/prisma/client
+
+# Envs of all kind
 .env
 .env*

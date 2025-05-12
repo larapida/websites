@@ -5,17 +5,12 @@
     "rootDir": "src",
     "outDir": "dist",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "module": "preserve",
+    "moduleResolution": "bundler",
     "emitDeclarationOnly": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node"],
-    "skipLibCheck": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "types": ["node"]
   },
   "include": ["src/**/*.ts"],
-  "references": [
-    {
-      "path": "../../libs/api-service/database-utils/tsconfig.lib.json"
-    }
-  ]
+  "references": []
 }

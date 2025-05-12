@@ -8,11 +8,8 @@
     "emitDeclarationOnly": true,
     "types": ["node"]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "../types/src/**/*.d.ts"],
   "references": [
-    {
-      "path": "../database-utils/tsconfig.lib.json"
-    },
     {
       "path": "../../shared/service-utils/tsconfig.lib.json"
     },

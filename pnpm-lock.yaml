@@ -108,24 +108,21 @@ importers:
       '@eslint/js':
         specifier: ^9.26.0
         version: 9.26.0
-      '@larapida-websites/api-service-database-utils':
-        specifier: workspace:^
-        version: link:libs/api-service/database-utils
       '@larapida-websites/api-service-endpoints':
         specifier: workspace:^
         version: link:libs/api-service/endpoints
       '@larapida-websites/api-service-middlewares':
         specifier: workspace:^
         version: link:libs/api-service/middlewares
+      '@larapida-websites/api-service-types':
+        specifier: workspace:^
+        version: link:libs/api-service/types
       '@larapida-websites/api-service-utils':
         specifier: workspace:^
         version: link:libs/api-service/utils
       '@larapida-websites/ecosystem':
         specifier: workspace:^
         version: link:tools/ecosystem
-      '@larapida-websites/prisma':
-        specifier: workspace:^
-        version: link:tools/prisma
       '@larapida-websites/shared-client-utils':
         specifier: workspace:^
         version: link:libs/shared/client-utils
@@ -366,19 +363,19 @@ importers:
 
   config/www-ecosystem: {}
 
-  libs/api-service/database-utils:
-    dependencies:
-      '@swc/helpers':
-        specifier: ~0.5.17
-        version: 0.5.17
-
   libs/api-service/endpoints: {}
 
   libs/api-service/middlewares: {}
 
+  libs/api-service/types: {}
+
   libs/api-service/utils: {}
 
+  libs/shared/client-types: {}
+
   libs/shared/client-utils: {}
+
+  libs/shared/old-client-utils: {}
 
   libs/shared/service-configs: {}
 
@@ -412,17 +409,7 @@ importers:
         specifier: ~0.5.11
         version: 0.5.17
 
-  tools/prisma:
-    dependencies:
-      '@larapida-websites/api-service-database-utils':
-        specifier: workspace:^
-        version: link:../../libs/api-service/database-utils
-      '@swc/helpers':
-        specifier: ~0.5.11
-        version: 0.5.17
-      bcryptjs:
-        specifier: ^3.0.2
-        version: 3.0.2
+  tools/prisma: {}
 
 packages:
 

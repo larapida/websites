@@ -1,5 +1,5 @@
-import { prisma } from '@larapida-websites/api-service-database-utils';
 import { categories } from '../data/categories';
+import { prisma } from '../../prisma';
 
 export async function seedCategories() {
   const results = [];

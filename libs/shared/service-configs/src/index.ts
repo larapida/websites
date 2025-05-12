@@ -1,2 +1,1 @@
-export * from './allowedOrigins';
-export * from './corsConfigs';
+export * from './createCorsOptions';

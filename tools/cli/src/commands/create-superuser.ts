@@ -1,8 +1,7 @@
 import { Command } from 'commander';
 import inquirer from 'inquirer';
 import bcrypt from 'bcryptjs';
-
-const prisma = new PrismaClient();
+import { prisma } from '../prisma';
 
 export const createSuperuserCommand = new Command('create-superuser')
   .description('Create a superuser in the production database')

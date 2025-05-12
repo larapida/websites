@@ -16,10 +16,15 @@
           "{options.outputPath}"
         ],
         "dependsOn": [
+          {
+            "projects": "@larapida-websites/prisma-tools",
+            "target": "generate",
+            "params": "forward"
+          },
           "^build"
         ],
         "options": {
-          "bundle": true,
+          "bundle": false,
           "deleteOutputPath": true,
           "platform": "node",
           "outputPath": "dist/apps/api-service",
@@ -28,6 +33,13 @@
           ],
           "main": "apps/api-service/src/main.ts",
           "tsConfig": "apps/api-service/tsconfig.app.json",
+          "assets": [
+            {
+              "input": "apps/api-service/src/prisma/client",
+              "glob": "*.node",
+              "output": "prisma/client"
+            }
+          ],
           "declaration": false,
           "esbuildOptions": {
             "sourcemap": true,

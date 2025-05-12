@@ -3,7 +3,7 @@ import compression from 'compression';
 import morgan from 'morgan';
 import { startService } from './startService';
 import cors from 'cors';
-import { corsConfigs } from '@larapida-websites/shared-service-configs';
+import { createCorsOptions } from '@larapida-websites/shared-service-configs';
 
 export interface AppOptions {
   /**
@@ -47,7 +47,7 @@ export async function app(options?: AppOptions): Promise<void> {
   // Common middleware
   service.use(compression());
   service.use(morgan('tiny'));
-  service.use(cors(corsConfigs));
+  service.use(cors(createCorsOptions(service)));
   service.use(express.json());
 
   // 🔁 Per-app middleware or routes

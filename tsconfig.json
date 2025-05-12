@@ -19,22 +19,13 @@
       "path": "./apps/www"
     },
     {
-      "path": "./libs/shared/client-utils"
-    },
-    {
       "path": "./libs/shared/service-utils"
     },
     {
       "path": "./libs/shared/service-configs"
     },
     {
-      "path": "./libs/api-service/middlewares"
-    },
-    {
       "path": "./libs/api-service/endpoints"
-    },
-    {
-      "path": "./libs/api-service/utils"
     },
     {
       "path": "./libs/www/ui"
@@ -55,13 +46,25 @@
       "path": "./tools/cli"
     },
     {
+      "path": "./apps/api-service"
+    },
+    {
       "path": "./tools/prisma"
     },
     {
-      "path": "./libs/api-service/database-utils"
+      "path": "./libs/api-service/types"
     },
     {
-      "path": "./apps/api-service"
+      "path": "./libs/api-service/middlewares"
+    },
+    {
+      "path": "./libs/api-service/utils"
+    },
+    {
+      "path": "./libs/shared/client-utils"
+    },
+    {
+      "path": "./libs/shared/client-types"
     }
   ]
 }

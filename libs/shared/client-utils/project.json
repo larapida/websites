@@ -1,9 +1,0 @@
-{
-  "name": "@larapida-websites/shared-client-utils",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared/client-utils/src",
-  "projectType": "library",
-  "tags": ["type:lib", "scope:shared", "platform:client"],
-  "// targets": "to see all targets run: nx show project @larapida-websites/shared-client-utils --web",
-  "targets": {}
-}

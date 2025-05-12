@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
 import { HttpError } from '@larapida-websites/shared-service-utils';
-import { prisma } from '@larapida-websites/api-service-database-utils';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -25,7 +24,7 @@ export async function handler(req: Request, res: Response, next: NextFunction) {
 
   try {
     // Retrieve user by email
-    const user = await prisma.user.findUnique({ where: { email } });
+    const user = await req.prisma.user.findUnique({ where: { email } });
 
     // If user does not exist or password is invalid, return an error
     if (!user || !bcrypt.compareSync(password, user.password)) {

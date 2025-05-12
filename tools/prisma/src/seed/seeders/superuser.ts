@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { prisma } from '@larapida-websites/api-service-database-utils';
+import { prisma } from '../../prisma';
 import { superuser } from '../data/superuser';
 
 export async function seedSuperuser() {

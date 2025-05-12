@@ -30,7 +30,13 @@
       "exclude": [
         "config/api-ecosystem/*",
         "config/admin-ecosystem/*",
-        "config/www-ecosystem/*"
+        "config/www-ecosystem/*",
+        "tools/prisma/*",
+        "liba/api-service/types/*",
+        "libs/api-service/types/*",
+        "libs/api-service/middlewares/*",
+        "libs/api-service/utils/*",
+        "libs/shared/client-types/*"
       ]
     },
     {

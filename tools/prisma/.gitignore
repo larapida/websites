@@ -1,0 +1,5 @@
+# Dotenvx private keys
+.env.keys
+
+# Prisma generated client
+/src/prisma/client

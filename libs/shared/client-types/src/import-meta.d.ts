@@ -1,12 +1,16 @@
 /// <reference types="node" />
 
-declare interface ImportMetaEnv {
+interface ImportMetaEnv {
   VITE_DOMAIN_NAME?: string;
   VITE_SERVICE_NAME?: string;
   VITE_API_SERVICE_NAME?: string;
   VITE_HTTPS?: string;
 }
 
-declare interface ImportMeta {
-  readonly env: ImportMetaEnv;
+declare global {
+  interface ImportMeta {
+    readonly env: ImportMetaEnv;
+  }
 }
+
+export {};
