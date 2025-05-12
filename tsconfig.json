@@ -19,9 +19,6 @@
       "path": "./libs/api-service/endpoints"
     },
     {
-      "path": "./libs/www/ui"
-    },
-    {
       "path": "./config/api-ecosystem"
     },
     {
@@ -68,6 +65,9 @@
     },
     {
       "path": "./libs/shared/ui"
+    },
+    {
+      "path": "./libs/www/ui"
     }
   ]
 }

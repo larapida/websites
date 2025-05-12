@@ -123,9 +123,6 @@ importers:
       '@larapida-websites/ecosystem':
         specifier: workspace:^
         version: link:tools/ecosystem
-      '@larapida-websites/old-shared-ui':
-        specifier: workspace:^
-        version: link:libs/shared/old-ui
       '@larapida-websites/shared-client-utils':
         specifier: workspace:^
         version: link:libs/shared/client-utils
@@ -135,6 +132,9 @@ importers:
       '@larapida-websites/shared-service-utils':
         specifier: workspace:^
         version: link:libs/shared/service-utils
+      '@larapida-websites/shared-ui':
+        specifier: workspace:^
+        version: link:libs/shared/ui
       '@larapida-websites/www-ui':
         specifier: workspace:^
         version: link:libs/www/ui
@@ -374,8 +374,6 @@ importers:
   libs/shared/client-types: {}
 
   libs/shared/client-utils: {}
-
-  libs/shared/old-ui: {}
 
   libs/shared/service-config: {}
 
