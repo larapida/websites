@@ -1,7 +1,6 @@
-import { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
-export interface HeaderProps {
+export interface HeaderProps extends PropsWithChildren {
   title: string;
   subtitle?: string;
-  children?: ReactNode;
 }

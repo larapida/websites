@@ -1,6 +1,6 @@
-import React from 'react';
+import type { PropsWithChildren } from 'react';
 
-export interface HeroProps {
+export interface HeroProps extends PropsWithChildren {
   /**
    * @default "/images/wallpapers/riparazioni.webp"
    */
@@ -10,6 +10,4 @@ export interface HeroProps {
    * @default "35vh"
    */
   height?: string;
-
-  children?: React.ReactNode;
 }

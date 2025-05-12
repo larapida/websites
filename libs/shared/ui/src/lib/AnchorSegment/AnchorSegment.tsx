@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, type PropsWithChildren } from 'react';
 import { useLocation } from 'react-router';
 
-export interface AnchorSegmentProps {
+export interface AnchorSegmentProps extends PropsWithChildren {
   id: string;
 
   /**
@@ -9,8 +9,6 @@ export interface AnchorSegmentProps {
    * @default 0
    */
   offset?: number;
-
-  children?: React.ReactNode;
 }
 
 export const AnchorSegment = (props: AnchorSegmentProps) => {
