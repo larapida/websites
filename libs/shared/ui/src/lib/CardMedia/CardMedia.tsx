@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/joy';
 import { useNavigate } from 'react-router';
-import { MediaCardProps } from './CardMedia.types';
+import type { MediaCardProps } from './CardMedia.types';
 
 export const CardMedia = ({
   title,

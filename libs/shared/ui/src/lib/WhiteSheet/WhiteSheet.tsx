@@ -1,4 +1,4 @@
-import { Sheet, Theme, type SheetProps } from '@mui/joy';
+import { Sheet, type Theme, type SheetProps } from '@mui/joy';
 
 /**
  * `WhiteSheet` is a pre-styled wrapper around Joy UI's `Sheet` component

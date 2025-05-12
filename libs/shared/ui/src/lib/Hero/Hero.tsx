@@ -1,5 +1,5 @@
 import { Sheet } from '@mui/joy';
-import { HeroProps } from './Hero.types';
+import type { HeroProps } from './Hero.types';
 
 export const Hero = ({
   backgroundImageUrl = '/static/images/wallpapers/riparazioni.webp',

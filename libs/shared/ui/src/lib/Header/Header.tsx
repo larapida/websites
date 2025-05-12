@@ -1,5 +1,5 @@
 import { Sheet, Typography } from '@mui/joy';
-import { HeaderProps } from './Header.types';
+import type { HeaderProps } from './Header.types';
 
 export const Header = ({ title, subtitle, children }: HeaderProps) => {
   return (
