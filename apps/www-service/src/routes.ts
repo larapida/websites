@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
-import { join } from 'path';
 import { reactRouterServerLoader } from '@larapida-websites/shared-service-utils';
+import { join } from 'node:path';
 
 export async function routes(app: Application, root: string) {
   app.use(

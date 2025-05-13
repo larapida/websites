@@ -22,7 +22,15 @@
         "parallelism": false,
         "options": {
           "scope": "admin"
-        }
+        },
+        "dependsOn": [
+          {
+            "projects": [
+              "@larapida-websites/ecosystem"
+            ],
+            "target": "build"
+          }
+        ]
       },
       "pre-inject-env": {
         "executor": "@larapida-websites/ecosystem:inject-env",
@@ -31,6 +39,14 @@
           "scope": "admin",
           "preBuild": true
         },
+        "dependsOn": [
+          {
+            "projects": [
+              "@larapida-websites/ecosystem"
+            ],
+            "target": "build"
+          }
+        ],
         "defaultConfiguration": "development",
         "configurations": {
           "development": {

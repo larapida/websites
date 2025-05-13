@@ -24,7 +24,7 @@
           "^build"
         ],
         "options": {
-          "bundle": false,
+          "bundle": true,
           "deleteOutputPath": true,
           "platform": "node",
           "outputPath": "dist/apps/api-service",
@@ -37,7 +37,7 @@
             {
               "input": "apps/api-service/src/prisma/client",
               "glob": "*.node",
-              "output": "prisma/client"
+              "output": "."
             }
           ],
           "declaration": false,

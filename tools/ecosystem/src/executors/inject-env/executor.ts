@@ -1,4 +1,9 @@
-import { PromiseExecutor } from '@nx/devkit';
+import {
+  createProjectGraphAsync,
+  PromiseExecutor,
+  readCachedProjectGraph,
+  workspaceRoot,
+} from '@nx/devkit';
 import { DeployExecutorSchema } from './schema';
 import { join, resolve } from 'path';
 import { statSync } from 'fs';
@@ -18,39 +23,71 @@ const runExecutor: PromiseExecutor<DeployExecutorSchema> = async (options) => {
     environment === 'development' ? '.env' : `.env.${environment}`;
 
   // Source
-  const vaultPath = resolve(`config/${scope}-ecosystem`);
+  const vaultPath = resolve(workspaceRoot, `config/${scope}-ecosystem`);
   const envKeys = join(vaultPath, '.env.keys');
   const encryptedEnvFilePath = join(vaultPath, encryptedEnvFile);
 
   // Destination
   const outputRoot = preBuild ? '' : 'dist/';
-  const distPath = resolve(`${outputRoot}${type}s/${projectName}`);
+  const distPath = resolve(
+    workspaceRoot,
+    `${outputRoot}${type}s/${projectName}`
+  );
   const outputPath = join(distPath, '.env');
 
+  const safeStat = (
+    path: string
+  ): { exists: boolean; isFile: boolean; isDir: boolean } => {
+    try {
+      const stat = statSync(path);
+      return {
+        exists: true,
+        isFile: stat.isFile(),
+        isDir: stat.isDirectory(),
+      };
+    } catch {
+      return { exists: false, isFile: false, isDir: false };
+    }
+  };
+
   try {
+    try {
+      readCachedProjectGraph();
+    } catch {
+      console.log('📦 No cached project graph. Creating it...');
+      await createProjectGraphAsync();
+    }
+
     console.log(`🔐 Decrypting ${scope}'s ${encryptedEnvFile}...`);
 
-    // Check if target env file exists
-    const statEnvFile = statSync(encryptedEnvFilePath);
-
-    if (statEnvFile.isDirectory()) {
-      console.error(`❌ ${encryptedEnvFile} exists but is a directory`);
+    // Check encrypted env file
+    const envFileStat = safeStat(encryptedEnvFilePath);
+    if (!envFileStat.exists) {
+      console.error(`❌ Encrypted env file not found: ${encryptedEnvFilePath}`);
+      return { success: false };
+    }
+    if (!envFileStat.isFile) {
+      console.error(`❌ Encrypted env file is not a regular file`);
       return { success: false };
     }
 
-    // Check if .env.keys is there
-    const statEnvKeys = statSync(envKeys);
-
-    if (statEnvKeys.isDirectory()) {
-      console.error(`❌ .env.keys exists but is a directory`);
+    // Check .env.keys
+    const keysStat = safeStat(envKeys);
+    if (!keysStat.exists) {
+      console.error(`❌ .env.keys not found: ${envKeys}`);
+      return { success: false };
+    }
+    if (!keysStat.isFile) {
+      console.error(`❌ .env.keys is not a regular file`);
       return { success: false };
     }
 
-    // Check if the destination folder exists
-    const statDistPath = statSync(distPath);
-
-    if (!statDistPath.isDirectory()) {
-      console.error('❌ Path exists but is not a directory');
+    // Check output directory
+    const distStat = safeStat(distPath);
+    if (!distStat.exists || !distStat.isDir) {
+      console.error(
+        `❌ dist path does not exist or is not a directory: ${distPath}`
+      );
       return { success: false };
     }
 

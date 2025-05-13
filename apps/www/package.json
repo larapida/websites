@@ -59,6 +59,7 @@
           "typecheck",
           "^build"
         ],
+        "parallel": false,
         "configurations": {
           "development": {
             "dependsOn": [
@@ -71,7 +72,8 @@
               },
               "typecheck",
               "^build"
-            ]
+            ],
+            "parallel": false
           },
           "production": {
             "dependsOn": [
@@ -84,7 +86,8 @@
               },
               "typecheck",
               "^build"
-            ]
+            ],
+            "parallel": false
           }
         }
       }
